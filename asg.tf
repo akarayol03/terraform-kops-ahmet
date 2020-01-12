@@ -4,19 +4,19 @@ resource "aws_autoscaling_attachment" "bastions-acirrustech-com" {
   autoscaling_group_name = "${aws_autoscaling_group.bastions-acirrustech-com.id}"
 }
 
-resource "aws_autoscaling_attachment" "master-eu-west-1a-masters-acirrustech-com" {
+resource "aws_autoscaling_attachment" "master-eu-west-2a-masters-acirrustech-com" {
   elb                    = "${aws_elb.api-acirrustech-com.id}"
-  autoscaling_group_name = "${aws_autoscaling_group.master-eu-west-1a-masters-acirrustech-com.id}"
+  autoscaling_group_name = "${aws_autoscaling_group.master-eu-west-2a-masters-acirrustech-com.id}"
 }
 
-resource "aws_autoscaling_attachment" "master-eu-west-1b-masters-acirrustech-com" {
+resource "aws_autoscaling_attachment" "master-eu-west-2b-masters-acirrustech-com" {
   elb                    = "${aws_elb.api-acirrustech-com.id}"
-  autoscaling_group_name = "${aws_autoscaling_group.master-eu-west-1b-masters-acirrustech-com.id}"
+  autoscaling_group_name = "${aws_autoscaling_group.master-eu-west-2b-masters-acirrustech-com.id}"
 }
 
-resource "aws_autoscaling_attachment" "master-eu-west-1c-masters-acirrustech-com" {
+resource "aws_autoscaling_attachment" "master-eu-west-2c-masters-acirrustech-com" {
   elb                    = "${aws_elb.api-acirrustech-com.id}"
-  autoscaling_group_name = "${aws_autoscaling_group.master-eu-west-1c-masters-acirrustech-com.id}"
+  autoscaling_group_name = "${aws_autoscaling_group.master-eu-west-2c-masters-acirrustech-com.id}"
 }
 
 resource "aws_autoscaling_group" "bastions-acirrustech-com" {
@@ -24,7 +24,7 @@ resource "aws_autoscaling_group" "bastions-acirrustech-com" {
   launch_configuration = "${aws_launch_configuration.bastions-acirrustech-com.id}"
   max_size             = 1
   min_size             = 1
-  vpc_zone_identifier  = ["${aws_subnet.utility-eu-west-1a-acirrustech-com.id}", "${aws_subnet.utility-eu-west-1b-acirrustech-com.id}", "${aws_subnet.utility-eu-west-1c-acirrustech-com.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.utility-eu-west-2a-acirrustech-com.id}", "${aws_subnet.utility-eu-west-2b-acirrustech-com.id}", "${aws_subnet.utility-eu-west-2c-acirrustech-com.id}"]
 
   tag = {
     key                 = "KubernetesCluster"
@@ -60,12 +60,12 @@ resource "aws_autoscaling_group" "bastions-acirrustech-com" {
   enabled_metrics     = ["GroupDesiredCapacity", "GroupInServiceInstances", "GroupMaxSize", "GroupMinSize", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances"]
 }
 
-resource "aws_autoscaling_group" "master-eu-west-1a-masters-acirrustech-com" {
-  name                 = "master-eu-west-1a.masters.acirrustech.com"
-  launch_configuration = "${aws_launch_configuration.master-eu-west-1a-masters-acirrustech-com.id}"
+resource "aws_autoscaling_group" "master-eu-west-2a-masters-acirrustech-com" {
+  name                 = "master-eu-west-2a.masters.acirrustech.com"
+  launch_configuration = "${aws_launch_configuration.master-eu-west-2a-masters-acirrustech-com.id}"
   max_size             = 1
   min_size             = 1
-  vpc_zone_identifier  = ["${aws_subnet.eu-west-1a-acirrustech-com.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.eu-west-2a-acirrustech-com.id}"]
 
   tag = {
     key                 = "KubernetesCluster"
@@ -75,13 +75,13 @@ resource "aws_autoscaling_group" "master-eu-west-1a-masters-acirrustech-com" {
 
   tag = {
     key                 = "Name"
-    value               = "master-eu-west-1a.masters.acirrustech.com"
+    value               = "master-eu-west-2a.masters.acirrustech.com"
     propagate_at_launch = true
   }
 
   tag = {
     key                 = "k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup"
-    value               = "master-eu-west-1a"
+    value               = "master-eu-west-2a"
     propagate_at_launch = true
   }
 
@@ -93,7 +93,7 @@ resource "aws_autoscaling_group" "master-eu-west-1a-masters-acirrustech-com" {
 
   tag = {
     key                 = "kops.k8s.io/instancegroup"
-    value               = "master-eu-west-1a"
+    value               = "master-eu-west-2a"
     propagate_at_launch = true
   }
 
@@ -101,12 +101,12 @@ resource "aws_autoscaling_group" "master-eu-west-1a-masters-acirrustech-com" {
   enabled_metrics     = ["GroupDesiredCapacity", "GroupInServiceInstances", "GroupMaxSize", "GroupMinSize", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances"]
 }
 
-resource "aws_autoscaling_group" "master-eu-west-1b-masters-acirrustech-com" {
-  name                 = "master-eu-west-1b.masters.acirrustech.com"
-  launch_configuration = "${aws_launch_configuration.master-eu-west-1b-masters-acirrustech-com.id}"
+resource "aws_autoscaling_group" "master-eu-west-2b-masters-acirrustech-com" {
+  name                 = "master-eu-west-2b.masters.acirrustech.com"
+  launch_configuration = "${aws_launch_configuration.master-eu-west-2b-masters-acirrustech-com.id}"
   max_size             = 1
   min_size             = 1
-  vpc_zone_identifier  = ["${aws_subnet.eu-west-1b-acirrustech-com.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.eu-west-2b-acirrustech-com.id}"]
 
   tag = {
     key                 = "KubernetesCluster"
@@ -116,13 +116,13 @@ resource "aws_autoscaling_group" "master-eu-west-1b-masters-acirrustech-com" {
 
   tag = {
     key                 = "Name"
-    value               = "master-eu-west-1b.masters.acirrustech.com"
+    value               = "master-eu-west-2b.masters.acirrustech.com"
     propagate_at_launch = true
   }
 
   tag = {
     key                 = "k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup"
-    value               = "master-eu-west-1b"
+    value               = "master-eu-west-2b"
     propagate_at_launch = true
   }
 
@@ -134,7 +134,7 @@ resource "aws_autoscaling_group" "master-eu-west-1b-masters-acirrustech-com" {
 
   tag = {
     key                 = "kops.k8s.io/instancegroup"
-    value               = "master-eu-west-1b"
+    value               = "master-eu-west-2b"
     propagate_at_launch = true
   }
 
@@ -142,12 +142,12 @@ resource "aws_autoscaling_group" "master-eu-west-1b-masters-acirrustech-com" {
   enabled_metrics     = ["GroupDesiredCapacity", "GroupInServiceInstances", "GroupMaxSize", "GroupMinSize", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances"]
 }
 
-resource "aws_autoscaling_group" "master-eu-west-1c-masters-acirrustech-com" {
-  name                 = "master-eu-west-1c.masters.acirrustech.com"
-  launch_configuration = "${aws_launch_configuration.master-eu-west-1c-masters-acirrustech-com.id}"
+resource "aws_autoscaling_group" "master-eu-west-2c-masters-acirrustech-com" {
+  name                 = "master-eu-west-2c.masters.acirrustech.com"
+  launch_configuration = "${aws_launch_configuration.master-eu-west-2c-masters-acirrustech-com.id}"
   max_size             = 1
   min_size             = 1
-  vpc_zone_identifier  = ["${aws_subnet.eu-west-1c-acirrustech-com.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.eu-west-2c-acirrustech-com.id}"]
 
   tag = {
     key                 = "KubernetesCluster"
@@ -157,13 +157,13 @@ resource "aws_autoscaling_group" "master-eu-west-1c-masters-acirrustech-com" {
 
   tag = {
     key                 = "Name"
-    value               = "master-eu-west-1c.masters.acirrustech.com"
+    value               = "master-eu-west-2c.masters.acirrustech.com"
     propagate_at_launch = true
   }
 
   tag = {
     key                 = "k8s.io/cluster-autoscaler/node-template/label/kops.k8s.io/instancegroup"
-    value               = "master-eu-west-1c"
+    value               = "master-eu-west-2c"
     propagate_at_launch = true
   }
 
@@ -175,7 +175,7 @@ resource "aws_autoscaling_group" "master-eu-west-1c-masters-acirrustech-com" {
 
   tag = {
     key                 = "kops.k8s.io/instancegroup"
-    value               = "master-eu-west-1c"
+    value               = "master-eu-west-2c"
     propagate_at_launch = true
   }
 
@@ -188,7 +188,7 @@ resource "aws_autoscaling_group" "nodes-acirrustech-com" {
   launch_configuration = "${aws_launch_configuration.nodes-acirrustech-com.id}"
   max_size             = "${var.max_size}"
   min_size             = "${var.min_size}"
-  vpc_zone_identifier  = ["${aws_subnet.eu-west-1a-acirrustech-com.id}", "${aws_subnet.eu-west-1b-acirrustech-com.id}", "${aws_subnet.eu-west-1c-acirrustech-com.id}"]
+  vpc_zone_identifier  = ["${aws_subnet.eu-west-2a-acirrustech-com.id}", "${aws_subnet.eu-west-2b-acirrustech-com.id}", "${aws_subnet.eu-west-2c-acirrustech-com.id}"]
 
   tag = {
     key                 = "KubernetesCluster"

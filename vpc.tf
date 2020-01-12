@@ -11,7 +11,7 @@ resource "aws_vpc" "acirrustech-com" {
 }
 
 resource "aws_vpc_dhcp_options" "acirrustech-com" {
-  domain_name         = "eu-west-1.compute.internal"
+  domain_name         = "eu-west-2.compute.internal"
   domain_name_servers = ["AmazonProvidedDNS"]
 
   tags = {

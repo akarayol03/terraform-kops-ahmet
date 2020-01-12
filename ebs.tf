@@ -1,6 +1,6 @@
 
 resource "aws_ebs_volume" "a-etcd-events-acirrustech-com" {
-  availability_zone = "eu-west-1a"
+  availability_zone = "eu-west-2a"
   size              = 20
   type              = "gp2"
   encrypted         = false
@@ -15,7 +15,7 @@ resource "aws_ebs_volume" "a-etcd-events-acirrustech-com" {
 }
 
 resource "aws_ebs_volume" "a-etcd-main-acirrustech-com" {
-  availability_zone = "eu-west-1a"
+  availability_zone = "eu-west-2a"
   size              = 20
   type              = "gp2"
   encrypted         = false
@@ -30,7 +30,7 @@ resource "aws_ebs_volume" "a-etcd-main-acirrustech-com" {
 }
 
 resource "aws_ebs_volume" "b-etcd-events-acirrustech-com" {
-  availability_zone = "eu-west-1b"
+  availability_zone = "eu-west-2b"
   size              = 20
   type              = "gp2"
   encrypted         = false
@@ -45,7 +45,7 @@ resource "aws_ebs_volume" "b-etcd-events-acirrustech-com" {
 }
 
 resource "aws_ebs_volume" "b-etcd-main-acirrustech-com" {
-  availability_zone = "eu-west-1b"
+  availability_zone = "eu-west-2b"
   size              = 20
   type              = "gp2"
   encrypted         = false
@@ -60,7 +60,7 @@ resource "aws_ebs_volume" "b-etcd-main-acirrustech-com" {
 }
 
 resource "aws_ebs_volume" "c-etcd-events-acirrustech-com" {
-  availability_zone = "eu-west-1c"
+  availability_zone = "eu-west-2c"
   size              = 20
   type              = "gp2"
   encrypted         = false
@@ -75,7 +75,7 @@ resource "aws_ebs_volume" "c-etcd-events-acirrustech-com" {
 }
 
 resource "aws_ebs_volume" "c-etcd-main-acirrustech-com" {
-  availability_zone = "eu-west-1c"
+  availability_zone = "eu-west-2c"
   size              = 20
   type              = "gp2"
   encrypted         = false

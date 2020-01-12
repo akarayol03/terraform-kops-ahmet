@@ -1,10 +1,10 @@
-resource "aws_nat_gateway" "eu-west-1a-acirrustech-com" {
-  allocation_id = "${aws_eip.eu-west-1a-acirrustech-com.id}"
-  subnet_id     = "${aws_subnet.utility-eu-west-1a-acirrustech-com.id}"
+resource "aws_nat_gateway" "eu-west-2-acirrustech-com" {
+  allocation_id = "${aws_eip.eu-west-2-acirrustech-com.id}"
+  subnet_id     = "${aws_subnet.utility-eu-west-2-acirrustech-com.id}"
 
   tags = {
     KubernetesCluster                       = "acirrustech.com"
-    Name                                    = "eu-west-1a.acirrustech.com"
+    Name                                    = "eu-west-2.acirrustech.com"
     "kubernetes.io/cluster/acirrustech.com" = "owned"
   }
 }

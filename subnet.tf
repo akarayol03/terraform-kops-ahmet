@@ -2,7 +2,7 @@
 resource "aws_subnet" "eu-west-2a-acirrustech-com" {
   vpc_id            = "${aws_vpc.acirrustech-com.id}"
   cidr_block        = "172.20.32.0/19"
-  availability_zone = "eu-west-a"
+  availability_zone = "eu-west-2a"
 
   tags = {
     KubernetesCluster                       = "acirrustech.com"

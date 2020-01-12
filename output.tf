@@ -20,7 +20,7 @@ output "cluster_name" {
 }
 
 output "master_autoscaling_group_ids" {
-  value = ["${aws_autoscaling_group.master-eu-west-1a-masters-acirrustech-com.id}", "${aws_autoscaling_group.master-eu-west-1b-masters-acirrustech-com.id}", "${aws_autoscaling_group.master-eu-west-1c-masters-acirrustech-com.id}"]
+  value = ["${aws_autoscaling_group.master-eu-west-2a-masters-acirrustech-com.id}", "${aws_autoscaling_group.master-eu-west-1b-masters-acirrustech-com.id}", "${aws_autoscaling_group.master-eu-west-1c-masters-acirrustech-com.id}"]
 }
 
 output "master_security_group_ids" {
@@ -44,7 +44,7 @@ output "node_security_group_ids" {
 }
 
 output "node_subnet_ids" {
-  value = ["${aws_subnet.eu-west-1a-acirrustech-com.id}", "${aws_subnet.eu-west-1b-acirrustech-com.id}", "${aws_subnet.eu-west-1c-acirrustech-com.id}"]
+  value = ["${aws_subnet.eu-west-2a-acirrustech-com.id}", "${aws_subnet.eu-west-1b-acirrustech-com.id}", "${aws_subnet.eu-west-1c-acirrustech-com.id}"]
 }
 
 output "nodes_role_arn" {
@@ -59,8 +59,8 @@ output "region" {
   value = "eu-west-1"
 }
 
-output "route_table_private-eu-west-1a_id" {
-  value = "${aws_route_table.private-eu-west-1a-acirrustech-com.id}"
+output "route_table_private-eu-west-2a_id" {
+  value = "${aws_route_table.private-eu-west-2a-acirrustech-com.id}"
 }
 
 output "route_table_private-eu-west-1b_id" {
@@ -75,8 +75,8 @@ output "route_table_public_id" {
   value = "${aws_route_table.acirrustech-com.id}"
 }
 
-output "subnet_eu-west-1a_id" {
-  value = "${aws_subnet.eu-west-1a-acirrustech-com.id}"
+output "subnet_eu-west-2a_id" {
+  value = "${aws_subnet.eu-west-2a-acirrustech-com.id}"
 }
 
 output "subnet_eu-west-1b_id" {
@@ -87,8 +87,8 @@ output "subnet_eu-west-1c_id" {
   value = "${aws_subnet.eu-west-1c-acirrustech-com.id}"
 }
 
-output "subnet_utility-eu-west-1a_id" {
-  value = "${aws_subnet.utility-eu-west-1a-acirrustech-com.id}"
+output "subnet_utility-eu-west-2a_id" {
+  value = "${aws_subnet.utility-eu-west-2a-acirrustech-com.id}"
 }
 
 output "subnet_utility-eu-west-1b_id" {

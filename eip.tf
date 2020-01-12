@@ -1,29 +1,29 @@
-resource "aws_eip" "eu-west-1a-acirrustech-com" {
+resource "aws_eip" "eu-west-2a-acirrustech-com" {
   vpc = true
 
   tags = {
     KubernetesCluster                       = "acirrustech.com"
-    Name                                    = "eu-west-1a.acirrustech.com"
+    Name                                    = "eu-west-2a.acirrustech.com"
     "kubernetes.io/cluster/acirrustech.com" = "owned"
   }
 }
 
-resource "aws_eip" "eu-west-1b-acirrustech-com" {
+resource "aws_eip" "eu-west-2b-acirrustech-com" {
   vpc = true
 
   tags = {
     KubernetesCluster                       = "acirrustech.com"
-    Name                                    = "eu-west-1b.acirrustech.com"
+    Name                                    = "eu-west-2b.acirrustech.com"
     "kubernetes.io/cluster/acirrustech.com" = "owned"
   }
 }
 
-resource "aws_eip" "eu-west-1c-acirrustech-com" {
+resource "aws_eip" "eu-west-2c-acirrustech-com" {
   vpc = true
 
   tags = {
     KubernetesCluster                       = "acirrustech.com"
-    Name                                    = "eu-west-1c.acirrustech.com"
+    Name                                    = "eu-west-2c.acirrustech.com"
     "kubernetes.io/cluster/acirrustech.com" = "owned"
   }
 }

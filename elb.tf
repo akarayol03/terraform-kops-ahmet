@@ -10,7 +10,7 @@ resource "aws_elb" "api-acirrustech-com" {
   }
 
   security_groups = ["${aws_security_group.api-elb-acirrustech-com.id}"]
-  subnets         = ["${aws_subnet.utility-eu-west-1a-acirrustech-com.id}", "${aws_subnet.utility-eu-west-1b-acirrustech-com.id}", "${aws_subnet.utility-eu-west-1c-acirrustech-com.id}"]
+  subnets         = ["${aws_subnet.utility-eu-west-2a-acirrustech-com.id}", "${aws_subnet.utility-eu-west-2b-acirrustech-com.id}", "${aws_subnet.utility-eu-west-2c-acirrustech-com.id}"]
 
   health_check = {
     target              = "SSL:443"
@@ -41,7 +41,7 @@ resource "aws_elb" "bastion-acirrustech-com" {
   }
 
   security_groups = ["${aws_security_group.bastion-elb-acirrustech-com.id}"]
-  subnets         = ["${aws_subnet.utility-eu-west-1a-acirrustech-com.id}", "${aws_subnet.utility-eu-west-1b-acirrustech-com.id}", "${aws_subnet.utility-eu-west-1c-acirrustech-com.id}"]
+  subnets         = ["${aws_subnet.utility-eu-west-2a-acirrustech-com.id}", "${aws_subnet.utility-eu-west-2b-acirrustech-com.id}", "${aws_subnet.utility-eu-west-2c-acirrustech-com.id}"]
 
   health_check = {
     target              = "TCP:22"
